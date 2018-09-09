@@ -1,0 +1,44 @@
+<div class="modal fade" id="loginModal" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- content -->
+    <div class="modal-content">
+        <div class="modal-header">
+          <button class="close" data-dismiss="modal">
+            &times;
+          </button>
+        </div>
+        <div class="modal-body">
+
+            <% if !current_user %>
+              <div class="login">
+                <%= render 'sessions/new' %>
+                <button class="btn btn-primary mr-auto" onclick="$('.login').hide();$('.div111').show();">
+                  Sign Up
+                </button>
+              </div>
+            <% else %>
+               <p>Username: </p> <%= current_user.email %> <br/>
+               <button> <%= link_to "Logout", '/logout'%></button>
+              <button></button>
+            <% end %>
+            <!-- Hide Sign up info, load on button click -->
+            <div class="div111" style="display:none;" >
+              <%= render 'users/new' %>
+              <button class="btn btn-primary mr-auto" onclick="$('.div111').hide();$('.login').show();">
+                Back
+              </button>
+
+            </div>
+          </div>
+
+        <div class="modal-footer">
+          <button class="btn btn-secondary" data-dismiss="modal">
+           Close
+          </button>
+        </div>
+
+        </div>
+    </div>
+  </div>
+</div>

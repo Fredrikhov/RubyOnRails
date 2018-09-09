@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tag %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => false %>
+  <!-- trenger bare å hente turbolinks en gang, ellers starter den flere ganger å gir feilmelding -->
+   <% # javascript_include_tag 'application', 'data-turbolinks-track' => false %>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Rettlin</title>
+</head>
+<body>
+<%= render 'layouts/navigation' %>
+<%= render 'layouts/loginModal' %>
+<%= yield %>
+<%= render 'layouts/footer'  %>
+
+<% flash.each do |name, msg| %>
+  <%= content_tag :div, msg, :id => "flash_#{name}" %>
+<% end %>
+</body> <!-- end body -->
+</html> <!-- end html page -->

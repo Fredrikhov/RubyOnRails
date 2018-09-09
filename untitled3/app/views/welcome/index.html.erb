@@ -1,0 +1,66 @@
+<!-- Main page view -->
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <h4>Rettlin</h4>
+        <p>Interaktiv problemløsning gjennom mattematiske oppgaver, Det er rikelig med oppgaver som både trener regneferdighet,
+          problemløsning og praktisk matematikk. Oppgavene er delt i seks ulike vanskelighetsnivåer. </p>
+        <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-download"></span> Download</button>
+      </div>
+      <div class="col-md-2">
+        <%= image_tag "hiofburned.png", width: 150, height: 150, alt: "Bildet av rettlin" %>
+      </div>
+    </div>
+  </div><!-- end jumbotron -->
+</div> <!-- end container -->
+
+<div class="container">
+  <h2>Nyheter/oppdateringer</h2>
+  <div class="col-md-10 col-md-offset-1">
+    <table class="table table-responsive" style="background-color:grey;">
+      <tbody>
+        <tr>
+          <td><span class="glyphicon glyphicon-alert"></span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div> <!-- col-md-10 col-md-offset-1 -->
+</div> <!-- container -->
+
+<!-- ofte stilte spørsmål -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 automargin">
+      <h3 class="que">Ofte stilte spørsmål</h3>
+      <div class="col-md-6 col-md-offset-3">
+        <div class="panel-heading">
+          <div class="panel-body button1" onclick="showAnswer('divBox', 'icon')">Hver spesielt med denne programvaren?
+            <i id="icon" class="glyphicon glyphicon-plus pull-right"></i>
+          </div>
+          <div id="divBox" class="container div" style="display:none">
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting </p>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting </p>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting </p>
+          </div>
+          <div class="panel-body" onclick="showAnswer('divBox1', 'icon1')">Hver spesielt med denne programvaren?
+            <i id="icon1" class="glyphicon glyphicon-plus pull-right"></i>
+          </div>
+          <div id="divBox1" class="container div" style="display:none">
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting </p>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting </p>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting </p>
+          </div>
+          <div class="panel-body last" onclick="showAnswer('divBox2', 'icon2')">Hver spesielt med denne programvaren?
+            <i id="icon2" class="glyphicon glyphicon-plus pull-right"></i>
+          </div>
+          <div id="divBox2" class="container div" style="display:none">
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting </p>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting </p>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting </p>
+          </div>
+        </div> <!-- panel heading   -->
+      </div><!--  col-md-6  -->
+    </div><!--  col-md-12  -->
+  </div><!--  row  -->
+</div><!--  container  -->

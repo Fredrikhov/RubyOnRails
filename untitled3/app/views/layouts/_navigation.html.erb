@@ -1,0 +1,54 @@
+<nav class="navbar navbar-default fixed-top" role="navigation" style="margin-bottom:0px;">
+  <!-- navigation image -->
+  <div class="container">
+    <div class="navbar-header">
+      <!-- mobile navigation -->
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to root_path, class: "navbar-brand", style:{color:"black"} do %>
+        <!-- inline style to center the picture  // <span> makes them inline-->
+        <span><%= image_tag "hiofburned.png", height: 30, width: 30, alt: "Høgskolen i østfold", style:"margin-top:-5px" %></span>
+        |
+        <span><%= image_tag "hiofburned.png", width: 30, height: 30, style:"margin-top:-5px"  %></span>
+      <% end %>
+    </div> <!-- end navbar header -->
+
+    <!-- start main navigation -->
+    <div id="navbar" class="collapse navbar-collapse">
+      <!-- ul set to float-none for right-left-nav fix -->
+      <ul class="nav navbar-nav">
+        <li class="navbar-left"><%= link_to "Documentation", documentation_path%></li>
+        <li class="navbar-left"><a>Web Utvikling</a></li>
+
+        <!-- check if a user is logged in -->
+
+        <li class="">
+          <div class="navbar-form navbar-left">
+            <% if current_user %>
+              <button class="btn btn-primary" data-toggle="modal" data-target="#loginModal"><%= current_user.email %></button>
+              <% else %>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#loginModal"><span class="glyphicon glyphicon-download"></span>Log in</button>
+              <% end %>
+        </div></li>
+        <li class="">
+          <div class='navbar-form navbar-left'>
+            <button class="btn btn-primary">
+            <span class="glyphicon glyphicon-download">
+            </span> Download</button>
+          </div>
+        </li>
+
+      </ul> <!-- end navbar ul -->
+
+      <form action="#" method="post" class="navbar-form navbar-right">
+        <input type="search" name="" id="" class="form-control mr-sm-2" placeholder="Search" aria-label="">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div><!-- end collapse navbar-collapse -->
+
+  </div><!-- end container -->
+</nav>

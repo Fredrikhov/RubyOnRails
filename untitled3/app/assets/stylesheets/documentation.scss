@@ -1,0 +1,73 @@
+// Place all the styles related to the documentation controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.col-sm-10{
+  padding-top:33px;
+}
+
+.lin22{
+  list-style-type: none;
+}
+
+.jumbotron.jumbotron-fluid{
+  margin-bottom:0px !important;
+}
+
+.affix {
+  top: 5px;
+  z-index: 9999 !important;
+}
+
+
+/*body {
+  position: relative;
+}*/
+
+.affix-top {
+  position: static;
+}
+
+.affix-bottom {
+  position: absolute;
+  top:660px !important;
+}
+
+.navbar-toggle.tog{
+  float:left;
+}
+
+.sr{
+  margin-top:20px;
+  margin-bottom:10px;
+  font-family:inherit;
+  font-weight: 500;
+  line-weight: 1.1;
+  color:inherit;
+}
+
+@media (max-width: 767px)
+{
+  .h1
+  {
+    display: none;
+  }
+  .affix-bottom{
+
+  }
+  .affix {
+     position: static;
+   }
+}
+
+@media (min-width: 767px) {
+  .affix-bottom{
+
+  }
+}
+
+.collapse.navbar-collapse.col{
+  padding-right:0;
+  padding-left:0;
+}
