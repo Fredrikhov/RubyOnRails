@@ -10,15 +10,17 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
 
-    if @user.save
-      session[:user_id] = @user.id
-      redirect_to '/'
-      flash[:success] = "Velkommen tilbake"
-    else
-      flash[:fields] = "Felter kan ikke være tomme"
-      redirect_to '/'
+    respond_to do |format|
+      if @user.save
+        session[:user_id] = @user.id
+        redirect_to "/"
+      else
+        format.html{ render action: 'new'}
+        format.json {render js: @user.errors}
+      end
     end
-  end
+
+      end
 
   def user_params
     params.require(:user).permit(:email, :password, :password_conf)

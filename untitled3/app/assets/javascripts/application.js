@@ -12,7 +12,7 @@
 //
 
 //= require rails-ujs
-////= require jquery
+//= require jquery
 // = require_tree .
 //= require bootstrap-sprockets
 
@@ -37,4 +37,17 @@ function showAnswer(thechosen, theicon) {
         }
     });
 }
+
+//$("#message").html("<%= escape_javascript raw(flash_display) %>");
+
+$(document).ready(function() {
+    $("form").on("ajax:success", function(e, data, status, xhr) {
+        alert("Success!");
+    }).bind("ajax:error", function(e, xhr, status, error) {
+        alert("Error!");
+    });
+});
+
+
+
 

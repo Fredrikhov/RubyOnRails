@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   # routes for sign up
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
-
+  resources :users
 
 
   #routing from inside out
