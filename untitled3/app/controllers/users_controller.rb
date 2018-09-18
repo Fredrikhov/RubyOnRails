@@ -1,7 +1,4 @@
 class UsersController < ApplicationController
-  #attr_accessor :email, :password, :password_conf
-  # Must use strong params
-  #
 
   def new
     @user = User.new
@@ -13,15 +10,14 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         session[:user_id] = @user.id
-        redirect_to "/"
+        format.html { redirect_to "/", notice: 'Saved successfully.' }
       else
-        format.html{ render action: 'new'}
-        format.json {render js: @user.errors}
+        redirect_to "/signup"
       end
     end
+  end
 
-      end
-
+  private
   def user_params
     params.require(:user).permit(:email, :password, :password_conf)
   end

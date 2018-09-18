@@ -32,8 +32,8 @@ h2, h3, .copy{
 .footer{
   position:absolute;
   width:100%;
-  color:white !important;
-  background-color: #4682B4;
+  color:Black !important;
+  background-color: #e2e4e7;
 
 }
 
@@ -45,6 +45,12 @@ h2, h3, .copy{
   float:left;
   margin-left:auto;
   margin-right:auto;
+  padding:30px;
+}
+.column1{
+  float:left;
+  margin-left:auto;
+  margin-right:200px;
   padding:30px;
 }
 
@@ -61,7 +67,7 @@ hr{
   border: 0;
 }
  .aa{
-   color:white !important;
+   color:black;
    text-decoration: underline;
  }
 
@@ -70,5 +76,36 @@ hr{
  }
 
  .jumbotron.jumbotron-fluid{
-   background-image: url("Abstract-triangles-l.jpg");
+   background-image: url("ws_Simple_White_Apple_1680x1050.jpg");
  }
+ .h11{
+   font-size: 50px;
+ }
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+}
+.fa-twitter {
+  background: #55ACEE;
+  color: white !important;
+}
+.fa-github {
+  background: black;
+  color: white !important;
+}
+.fa-skype {
+  background: #00aff0;
+  color: white !important;
+}
+.fa:hover {
+  opacity: 0.7;
+}
+
+.btn-outline-success.long{
+  text-align:center;
+  width:100%;
+}
