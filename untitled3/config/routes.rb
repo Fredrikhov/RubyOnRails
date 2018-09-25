@@ -2,10 +2,7 @@ Rails.application.routes.draw do
 
 
   get 'users/new'
-
   root 'welcome#index'
-
-
 
   get 'documentation/documentation'
   get 'documentation', to:'documentation#documentation', as:"documentation"
@@ -13,7 +10,7 @@ Rails.application.routes.draw do
   get 'welcome/index'
 
   resources :articles do
-    post 'search', :on => :collection
+    get "search", to: "search#search"
   end
 
   # sette welcome page to root

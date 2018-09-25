@@ -1,0 +1,17 @@
+<div class="container">
+  <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
+  <br/>
+  <% @article.each do |article| %>
+    <div class="jumbotron">
+
+        <h4><%= article.title %></h4>
+        <br/>
+        <p><%= article.body %></p>
+      <p style="float:right;"><%= article.created_at.strftime("%Y-%m-%d") %></p>
+
+        <button><%= link_to 'Show', article_path(article) %></button>
+        <button><%= link_to 'Edit', edit_article_path(article) %></button>
+
+    </div>
+  <% end %>
+</div>

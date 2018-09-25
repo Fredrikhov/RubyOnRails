@@ -11,8 +11,6 @@ class ApplicationController < ActionController::Base
     render partial: '404/error', status: 404
   end
 
-
-
   def current_user
       @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
@@ -32,6 +30,7 @@ class ApplicationController < ActionController::Base
   private
   def set_article_all
     @article = Article.all
+    @articles = Article.order("created_at desc").limit(3)
   end
 
   def template_not_found

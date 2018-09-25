@@ -45,7 +45,7 @@
       </ul> <!-- end navbar ul -->
 
       <div class="navbar-form navbar-right">
-        <%= form_tag articles_path, method: 'get', :class => 'form-inline', role: "search", local: true do  %>
+        <%= form_tag  articles_path, method: 'get', :class => 'form-inline', role: "search", local: true do  %>
           <%= text_field_tag :search, params[:search], class: 'form-control', placeholder: 'Search'  %>
         <!--<input type="search" name="" id="" class="form-control mr-sm-2" placeholder="Search" aria-label=""> -->
           <%= submit_tag "Submit", class: 'btn btn-outline-success', :name => nil %>

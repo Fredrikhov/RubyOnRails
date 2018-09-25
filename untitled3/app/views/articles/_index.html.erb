@@ -4,17 +4,13 @@
 <div class="container">
    <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
 </div>
+<% @articles.each do |article| %>
   <div class="jumbotron">
-      <% @article.each do |article| %>
+
         <h4><%= article.title %></h4>
         <br/>
-        <p><%= article.body %></p>
-        <button><%= link_to 'Show', article_path(article) %></button>
-        <button><%= link_to 'Edit', edit_article_path(article) %></button>
-      <hr/>
-      <% end %>
-    <% if @articles.blank? %>
-    <h4>No matching articles containing the term <%= params[:search] %></h4>
-      <% end %>
+      <p><%= article.body %></p>
+      <p style="float:right;"><%= article.created_at.strftime("%Y-%m-%d") %></p>
+
   </div>
-</div>
+<% end %>

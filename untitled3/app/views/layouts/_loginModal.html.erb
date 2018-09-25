@@ -28,8 +28,7 @@
                <p>Username: <%= current_user.email %> <p/>
                <button> <%= link_to "Logout", '/logout'%></button>
               <button><%= link_to "New article", new_article_path %></button>
-            <button><%= link_to "show article", articles_path %></button>
-            <button><%= link_to "New article", new_article_path %></button>
+            <button><%= link_to "Edit a article", articles_path %></button>
             <% end %>
 
             <!-- Hide Sign up info, load on button click -->

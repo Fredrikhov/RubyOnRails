@@ -2,12 +2,6 @@ class ArticlesController < ApplicationController
   before_action :authorize
 
   def index
-    @article = Article.all
-    if params[:search]
-    @article = Article.search(params[:id]).order("created_at DESC")
-    else
-      @article = Article,all.order("created_at DESC")
-    end
   end
 
   def new
@@ -26,9 +20,9 @@ class ArticlesController < ApplicationController
     end
   end
 
-  def show
-    @article = Article.search(params[:search])
 
+  def show
+    @article = Article.find(params[:id])
   end
 
   private
