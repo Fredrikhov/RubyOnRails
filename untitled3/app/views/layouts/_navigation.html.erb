@@ -44,11 +44,16 @@
 
       </ul> <!-- end navbar ul -->
 
-      <form action="#" method="post" class="navbar-form navbar-right">
-        <input type="search" name="" id="" class="form-control mr-sm-2" placeholder="Search" aria-label="">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+      <div class="navbar-form navbar-right">
+        <%= form_tag articles_path, method: 'get', :class => 'form-inline', role: "search", local: true do  %>
+          <%= text_field_tag :search, params[:search], class: 'form-control', placeholder: 'Search'  %>
+        <!--<input type="search" name="" id="" class="form-control mr-sm-2" placeholder="Search" aria-label=""> -->
+          <%= submit_tag "Submit", class: 'btn btn-outline-success', :name => nil %>
+        <% end %>
+       <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
+      </div>
     </div><!-- end collapse navbar-collapse -->
+
 
   </div><!-- end container -->
 </nav>

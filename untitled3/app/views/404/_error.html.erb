@@ -5,23 +5,16 @@
   <%= csrf_meta_tag %>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => false %>
   <!-- trenger bare å hente turbolinks en gang, ellers starter den flere ganger å gir feilmelding -->
-   <% javascript_include_tag 'application', 'data-turbolinks-track' => false %>
+  <% javascript_include_tag 'application', 'data-turbolinks-track' => false %>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Rettlin</title>
 </head>
 <body>
-<%= render 'layouts/navigation' %>
-<%= render 'layouts/loginModal' %>
-<% flash.each do |key, value| %>
-  <div class="<%=flash_class(key) %>">
-    <%= value %>
+  <div class="jumbotron">
+    <h1 style="text-align: center;">404 not found</h1>
+    <h3 style="text-align: center;">You searched for a page the dosen't exist</h3>
+    <p style="text-align:center;"><%= link_to "Take Me Back", "/" %></p>
   </div>
-<% end %>
-<%= yield %>
-<%= render 'layouts/footer'  %>
-
-
-</body> <!-- end body -->
-</html> <!-- end html page -->
+</body>

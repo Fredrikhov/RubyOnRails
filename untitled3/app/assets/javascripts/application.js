@@ -32,30 +32,15 @@ function showAnswer(thechosen, theicon) {
         }
         else{
             //console.log("false");
-            $(this).removeClass("glyphicon-minus")
+            $(this).removeClass("glyphicon-minus");
 
         }
     });
 }
 
-
-$(document).ready(function() {
-    $("#form").on("ajax:error", function(e, data, status, xhr) {
-        alert("error");
-/*
-    $("#form").on("ajax:complete", (xhr, status)=>
-        alert( "complete")
-    )
-
-    $("#form").on("ajax:error", (xhr, data, status) =>
-        alert("error")
-    )
-    $("#form").on("ajax:success", (xhr, data, status) =>
-        alert("success")
-    )*/
-
-
-});
+// Make alert message show for 10 seconds then slide up (fadeaway) fast.
+setTimeout(function () {
+    $('.alert').delay(10000).slideUp(300);
 });
 
 
