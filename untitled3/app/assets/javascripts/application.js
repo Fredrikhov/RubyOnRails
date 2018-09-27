@@ -43,6 +43,14 @@ setTimeout(function () {
     $('.alert').delay(10000).slideUp(300);
 });
 
+$('.nav').affix({
+    offset: {
+        top: 50,
+        bottom: function () {
+            return (this.bottom = $('.footer').outerHeight(true))
+        }
+    }
+})
 
 
 

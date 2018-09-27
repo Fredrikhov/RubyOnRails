@@ -2,6 +2,7 @@ class ArticlesController < ApplicationController
   before_action :authorize
 
   def index
+    @article = Article.search(params[:search])
   end
 
   def new

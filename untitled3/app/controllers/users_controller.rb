@@ -13,6 +13,7 @@ class UsersController < ApplicationController
         format.html { redirect_to "/", notice: 'Saved successfully.' }
       else
         redirect_to "/signup"
+        flash[:error] = "Something went wrong. Please try again"
       end
     end
   end
