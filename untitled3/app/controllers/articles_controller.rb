@@ -1,8 +1,18 @@
 class ArticlesController < ApplicationController
-  before_action :authorize
+  #Må gjøre disse funksjonen tilgjengelig for søk index, show
+  before_action :authorize, :except=>[:index, :show]
 
+
+
+
+  # Denne resetter alle flash slik at flash fra andre views ikke forsetter å bli vist, når man bytter view/controller
+  after_action {flash.clear}
   def index
     @article = Article.search(params[:search])
+    if(@search.blank?)
+      flash[:danger] = "No match found, showing all articles"
+    end
+
   end
 
   def new

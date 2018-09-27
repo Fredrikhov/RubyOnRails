@@ -11,6 +11,6 @@
         <br/>
       <p><%= article.body %></p>
       <p style="float:right;"><%= article.created_at.strftime("%Y-%m-%d") %></p>
-
+    <button><%= link_to 'Les mer', article_path(article) %></button>
   </div>
 <% end %>

@@ -1,9 +1,11 @@
 class Article < ApplicationRecord
-  validates :article, presence: true
+
   def self.search(search)
     if search.present?
       where('body LIKE ?', "%#{search}%")
     else
+      puts("error")
+      all
     end
   end
 end
