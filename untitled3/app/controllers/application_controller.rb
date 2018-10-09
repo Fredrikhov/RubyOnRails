@@ -3,9 +3,7 @@ class ApplicationController < ActionController::Base
   before_action :require_valid_user!, :set_article_all
 
   # Denne resetter alle flash slik at flash fra andre views ikke forsetter å bli vist, når man bytter view/controller
-  after_action {flash.clear}
-  # Redirect missing template : rescue_from ActionView::MissingTemplate, :with => :template_not_found
-  # Redirect link to a page that dosent exist´
+  #after_action {flash.clear}
 
   #Handle routing error in ruby 5
 
@@ -32,7 +30,7 @@ class ApplicationController < ActionController::Base
 
   private
   def set_article_all
-    @article = Article.all
+    @articles = Article.all
     @articles = Article.order("created_at desc").limit(3)
   end
 

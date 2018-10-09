@@ -24,7 +24,11 @@ Rails.application.routes.draw do
   # routes for sign up
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
-  resources :users
+  resources :users do
+    member do
+    get :confirm_email
+    end
+  end
 
   #math for cathing 404
   match "*path", to: "welcome#catch_404", via: :all

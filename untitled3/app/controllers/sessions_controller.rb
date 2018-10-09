@@ -7,18 +7,24 @@ class SessionsController < ApplicationController
   end
   def create
     @user = User.find_by_email(params[:email])
-
     if @user && @user.authenticate(params[:password])
+      if @user.email_con
       session[:user_id] = @user.id
       redirect_to '/'
-    else
+      else
+      flash[:error] = "Activate your account"
+        redirect_to "/"
+      end
+      else
+      flash[:error] = "Bad Passord/email"
       redirect_to '/'
-    end
+      puts("error111111")
+      end
   end
 
   def destroy
     session.delete(:user_id)
     redirect_to '/'
+    flash[:danger] = "Logged out"
   end
-
 end

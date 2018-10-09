@@ -6,17 +6,33 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-
-    respond_to do |format|
       if @user.save
-        session[:user_id] = @user.id
-        format.html { redirect_to "/", notice: 'Saved successfully.' }
+        if UserMailer.registration_confirmation(@user).deliver
+        #session[:user_id] = @user.id
+        flash[:success] = "registration complete, please verify account"
+        redirect_to "/"
+        else
+          redirect_to "/"
+          flash[:error] = "something went wrong"
+          end
       else
-        redirect_to "/signup"
-        flash[:error] = "Something went wrong. Please try again"
+        redirect_to "/"
+        flash[:error] = "Something went wrong, please try again"
       end
     end
+
+
+ def confirm_email
+  @user = User.find_by_confirm_token(params[:id])
+  if @user
+    @user.email_activate
+    flash[:success] = "Welcome, profil is activated. Please Log in."
+    redirect_to "/"
+  else
+    flash[:error] = "Error: User does not exist"
+    redirect_to "/"
   end
+end
 
   private
   def user_params

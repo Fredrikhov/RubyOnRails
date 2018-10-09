@@ -6,6 +6,9 @@ Rails.application.configure do
   # since you don't have to restart the web server when you make code changes.
   config.cache_classes = false
 
+  #encrypt curcial files
+  config.read_encrypted_secrets = true
+
   # Do not eager load code on boot.
   config.eager_load = false
 
@@ -28,6 +31,21 @@ Rails.application.configure do
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.default_url_options = {:host => "0.0.0.0:3000"} #This host is local, not added to production.
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.raise_delivery_errors = true #Any errors? tell me.
+  config.action_mailer.perform_deliveries = true #force development to send emails.
+
+
+  config.action_mailer.smtp_settings ={
+      address: 'smtp.gmail.com',
+      port: 587,
+      domain: 'gmail.com',
+      user_name: ENV["GMAIL_EMAIL"], #Pass your information here
+      password:  ENV["GMAIL_PASSWORD"], #Pass in your information
+      authentication: 'plain',
+      enable_starttls_auto: true
+  }
 
   config.action_mailer.perform_caching = false
 

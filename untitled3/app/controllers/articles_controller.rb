@@ -2,16 +2,17 @@ class ArticlesController < ApplicationController
   #Må gjøre disse funksjonen tilgjengelig for søk index, show
   before_action :authorize, :except=>[:index, :show]
 
-
-
-
-  # Denne resetter alle flash slik at flash fra andre views ikke forsetter å bli vist, når man bytter view/controller
+  # Reset flash notification so if you change view it wil not shop.
   after_action {flash.clear}
   def index
+    @article = Article.all
     @article = Article.search(params[:search])
+
+    # not found any possible solution to show flash error in model. MVC.
     if(@search.blank?)
       flash[:danger] = "No match found, showing all articles"
     end
+
 
   end
 

@@ -4,7 +4,7 @@ class Article < ApplicationRecord
     if search.present?
       where('body LIKE ?', "%#{search}%")
     else
-      puts("error")
+      puts('error')
       all
     end
   end

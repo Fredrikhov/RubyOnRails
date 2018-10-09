@@ -52,6 +52,11 @@ $('.nav').affix({
     }
 })
 
+$(function(){
+    $('.buttonn').on('click', function () {
+        $('input[name=emailinput]').addClass('animated shake');
+    })
+})
 
 
 

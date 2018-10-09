@@ -35,6 +35,8 @@ gem 'jbuilder', '~> 2.5'
 
 #Elasticsearch geeeemmmmss
 
+#keeping users/pw secured
+gem 'figaro'
 
 
 # Gems required during deploying
